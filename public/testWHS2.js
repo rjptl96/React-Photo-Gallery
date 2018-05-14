@@ -21,7 +21,7 @@ function reqListener () {
     var display = document.getElementById("photoImg");
     if (photoURL !== "imagenotfound")
     {
-        display.src = "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + photoURL;
+        display.src = "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[0].fileName;
     }
     else
     {

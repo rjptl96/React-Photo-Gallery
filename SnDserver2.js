@@ -5,29 +5,7 @@ var file = new static.Server('./public');
 const url = require('url');
 const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database('PhotoQ.db');
-
-
-
-// global variables
 var fs = require('fs');  // file access module
-
-//var imgList = [];
-
-// code run on startup
-//loadImageList();
-
-
-
-// function loadImageList () {
-//     var data = fs.readFileSync('photoList.json');
-//     if (! data) {
-// 	    console.log("cannot read photoList.json");
-//     } else {
-// 	    listObj = JSON.parse(data);
-// 	    imgList = listObj.photoURLs;
-//     }
-// }
-
 
 function fileServer(request, response) {
 
@@ -49,7 +27,7 @@ function fileServer(request, response) {
     {
         var thenums = myURL.query.numList;
 
-        var newchar = ','
+        var newchar = ',';
         thenums = thenums.split(' ').join(newchar);
         db.all( ' SELECT * FROM photoTags WHERE idNum IN (' + thenums + ')', function (err, rowData) {
             dataCallback(err, rowData,response);

@@ -51,7 +51,7 @@ function fileServer(request, response) {
 
         var newchar = ','
         thenums = thenums.split(' ').join(newchar);
-        db.all( ' SELECT * FROM photoTags WHERE idNum IN (1,2,3)' , function (err, rowData) {
+        db.all( ' SELECT * FROM photoTags WHERE idNum IN (' + thenums + ')', function (err, rowData) {
             dataCallback(err, rowData,response);
 
         });

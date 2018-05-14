@@ -3,28 +3,30 @@ var http = require('http');
 var static = require('node-static');
 var file = new static.Server('./public');
 const url = require('url');
+const sqlite3 = require('sqlite3').verbose();
+let db = new sqlite3.Database('PhotoQ.db');
 
 
 
 // global variables
 var fs = require('fs');  // file access module
 
-var imgList = [];
+//var imgList = [];
 
 // code run on startup
-loadImageList();
+//loadImageList();
 
 
 
-function loadImageList () {
-    var data = fs.readFileSync('photoList.json');
-    if (! data) {
-	    console.log("cannot read photoList.json");
-    } else {
-	    listObj = JSON.parse(data);
-	    imgList = listObj.photoURLs;
-    }
-}
+// function loadImageList () {
+//     var data = fs.readFileSync('photoList.json');
+//     if (! data) {
+// 	    console.log("cannot read photoList.json");
+//     } else {
+// 	    listObj = JSON.parse(data);
+// 	    imgList = listObj.photoURLs;
+//     }
+// }
 
 
 function fileServer(request, response) {
@@ -43,19 +45,27 @@ function fileServer(request, response) {
         response.write("<p>You asked for <code>" + thequery[1] + "</code></p>");
         response.end();
     }
-    else if (myURL.pathname === '/query' && myURL.query && myURL.query.num  )
+    else if (myURL.pathname === '/query' && myURL.query && myURL.query.numList  )
     {
-        if (myURL.query.num >= 0 && myURL.query.num < 989)
-        {
-            response.writeHead(200, {"Content-Type": "application/json"});
-            var json = imgList[myURL.query.num];
-            response.end(json);
-        }
-        else
-        {
-            response.writeHead(200, {"Content-Type": "application/json"});
-            response.end("imagenotfound");
-        }
+        var thenums = myURL.query.numList;
+
+        var newchar = ','
+        thenums = thenums.split(' ').join(newchar);
+        db.all( ' SELECT * FROM photoTags WHERE idNum IN (1,2,3)' , function (err, rowData) {
+            dataCallback(err, rowData,response);
+
+        });
+        // if (myURL.query.num >= 0 && myURL.query.num < 989)
+        // {
+        //     response.writeHead(200, {"Content-Type": "application/json"});
+        //     var json = imgList[myURL.query.num];
+        //     response.end(json);
+        // }
+        // else
+        // {
+        //     response.writeHead(200, {"Content-Type": "application/json"});
+        //     response.end("imagenotfound");
+        // }
 
     }
 
@@ -71,6 +81,19 @@ function fileServer(request, response) {
     }).resume();
         }
     
+}
+
+function dataCallback(err, rowData,response) {
+    if (err) {
+        console.log("error: ",err);
+    }
+    else {
+        var listObj = JSON.stringify(rowData);
+        response.writeHead(200, {"Content-Type": "application/json"});
+        response.end(listObj);
+
+        //console.log("got: ",rowData,"\n");
+    }
 }
 
 var server = http.createServer(fileServer);

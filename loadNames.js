@@ -15,7 +15,7 @@ var imgList = [];
 loadImageList ();
 function loadImageList () {
     callbackcount = 0;
-    var data = fs.readFileSync('6whs.json');
+    var data = fs.readFileSync('photoList.json');
     if (! data) {
 	    console.log("cannot read 6whs.json");
     } else {
@@ -28,9 +28,14 @@ function loadImageList () {
        // myURL = url.parse(imgList[i], true);
         imgUrl = imgList[i];
         options = url.parse(imgUrl);
-        http.get(options,handleCallback).end();
-    }
 
+        var reqq = http.get(options,handleCallback).end().on('error', function (err) {
+            // This prints the error message and stack trace to `stderr`.
+            whatisgoingon(err,i);
+        });
+
+
+    }
 
 }
 
@@ -46,14 +51,28 @@ function handleCallback(response) {
 
         var buffer = Buffer.concat(chunks);
         //console.log(sizeOf(buffer));
-        var height = sizeOf(buffer).height;
-        var width = sizeOf(buffer).width;
-        var fileName = response.req.path.substr(response.req.path.lastIndexOf('/') + 1);
-        //var fileName = "";
-        cmdStr = 'INSERT INTO photoTags(fileName ,width , height, location , tags) VALUES (\"'   +fileName+'\",'   +width+', ' +height+', "","")';
 
-        db.run(cmdStr, dbCallback);
 
+        try {
+            var height = sizeOf(buffer).height;
+            var width = sizeOf(buffer).width;
+            var fileName = response.req.path.substr(response.req.path.lastIndexOf('/') + 1);
+            //var fileName = "";
+            cmdStr = 'INSERT INTO photoTags(fileName ,width , height, location , tags) VALUES (\"'   +fileName+'\",'   +width+', ' +height+', "","")';
+            console.log("WORKS");
+            db.run(cmdStr, dbCallback);
+        }
+        catch(err) {
+            console.log(response.req.path);
+        }
+
+
+
+
+
+    }).on('error', function(thisError){
+
+        console.log("YO");
     });
 }
 
@@ -63,7 +82,7 @@ function dbCallback(err) {
         console.log(err);
     }
     callbackcount++;
-
+    console.log(callbackcount);
     if(callbackcount == imgList.length)
     {
         dumpDB();
@@ -80,4 +99,10 @@ function dumpDB() {
 
 function dataCallback( err, data ) {
     console.log(data)
+}
+
+function whatisgoingon(err,options)
+{
+    //http.get(options,handleCallback).end();
+    console.log(options);
 }

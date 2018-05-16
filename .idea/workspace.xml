@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39566366-4086-4444-8c52-42988f68b9d0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/testWHS2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/testWHS2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/photoGallery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/testWHS2.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/testWHS2.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,15 +20,19 @@
       <file leaf-file-name="loadNames.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loadNames.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1300">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="460">
+              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoGallery.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/photoGallery.html">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="testWHS2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="93" selection-start-line="9" selection-start-column="93" selection-end-line="9" selection-end-column="93" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="photoGallery.js" pinned="false" current-in-tab="false">
@@ -40,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
+            <state relative-caret-position="69">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
             </state>
           </provider>
         </entry>
@@ -84,6 +88,7 @@
         <option value="$PROJECT_DIR$/loadNames.js" />
         <option value="$PROJECT_DIR$/public/photoGallery.js" />
         <option value="$PROJECT_DIR$/public/testWHS2.js" />
+        <option value="$PROJECT_DIR$/public/testWHS2.html" />
       </list>
     </option>
   </component>
@@ -113,7 +118,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,6 +134,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -180,11 +185,12 @@
       <workItem from="1526435689623" duration="1081000" />
       <workItem from="1526497165027" duration="1620000" />
       <workItem from="1526506643343" duration="202000" />
+      <workItem from="1526508623457" duration="192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3254000" />
+    <option name="totallyTimeSpent" value="3446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="822" extended-state="0" />
@@ -221,7 +227,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/loadNames.js</url>
-          <line>79</line>
+          <line>98</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
@@ -229,6 +235,44 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/loadNames.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1610">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/photoGallery.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/photoGallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="10" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createDB.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="145" selection-start-line="11" selection-end-line="11" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SnDserver2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1426">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3289">
+          <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/loadNames.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1610">
@@ -344,17 +388,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loadNames.js">
+    <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="69">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
+    <entry file="file://$PROJECT_DIR$/loadNames.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
+        <state relative-caret-position="460">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="93" selection-start-line="9" selection-start-column="93" selection-end-line="9" selection-end-column="93" />
         </state>
       </provider>
     </entry>

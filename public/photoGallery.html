@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Image Gallery Example</title>
-<link rel="stylesheet" type="text/css" href="http://web.cs.ucdavis.edu/~amenta/s18/reset.css">
+    <link rel="stylesheet" type="text/css" href="http://web.cs.ucdavis.edu/~amenta/s18/reset.css">
     <link rel="stylesheet" type="text/css" href="photoGallery.css">
-  </head>
-  <body>
 
-    <h2>PhotoQ</h2>
-    <div id="react"></div>
+</head>
+<body>
+<div id="query">
+    <P>
+        Load a photo by number:
+    </p>
+
+    <input id="num" placeholder="photo number">
+    <button onclick="photoByNumber()">Submit</button>
+</div>
+
+<div id="photoDisplay">
+    <img id="photoImg">
+</div>
+
+<h2>PhotoQ</h2>
+<div id="react"></div>
 
 
-    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="prop-types.js"></script>
-    <script src="react-photo-gallery.js"></script>
-    <script src="photoGallery.js"></script>
-  </body>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="prop-types.js"></script>
+<script src="react-photo-gallery.js"></script>
+<script src="testWHS2.js"></script>
+</body>
 </html>

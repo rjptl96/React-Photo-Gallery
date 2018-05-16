@@ -3,8 +3,6 @@
    get the real image data using an AJAX query. */
 
 let photos = [
-    {src: "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/A%20Torre%20Manuelina.jpg", width: 574, height: 381 },
-
 ];
 
 
@@ -142,9 +140,15 @@ function reqListener () {
 
     if (photoURL !== "imagenotfound")
     {
-        display.src = "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[0].fileName;
-        var car = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[0].fileName, width: json[0].width, height: json[0].height };
-        photos.push(car);
+        //display.src = "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[0].fileName;
+        var i;
+        for (i = 0; i< json.length ; i++)
+        {
+            var car = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height };
+            photos.push(car);
+        }
+
+
         ReactDOM.render(React.createElement(App),reactContainer);
     }
     else

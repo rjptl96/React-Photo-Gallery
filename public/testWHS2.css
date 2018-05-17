@@ -1,6 +1,7 @@
 
 body {
     min-height: 100vh;
+   overflow-y:scroll;
     /* need this line to
                       tell body to fill viewport */
     font-family: 'Montserrat', sans-serif;

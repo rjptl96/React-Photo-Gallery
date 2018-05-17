@@ -163,22 +163,24 @@ class App extends React.Component {
 
     render() {
         var w = window.innerWidth;
-        if (w > 480) {
+        var columns1;
+        if (w >= 480){
+            columns1 = 2;
+        }
+        if (w >= 1024){
+            columns1 = 3;
+        }
+        if (w >= 1824){
+            columns1 = 4;
+        }
+
         return (
-            React.createElement( Gallery, {photos: photos,columns: 3,
+            React.createElement( Gallery, {photos: photos,columns: columns1,
                 onClick: this.selectTile,
                 ImageComponent: ImageTile} )
         );
 
-    }
-    if (w < 481) {
-        return (
-            React.createElement( Gallery, {photos: photos,columns: 1,
-                onClick: this.selectTile,
-                ImageComponent: ImageTile} )
-        );
 
-    }
 
     }
 

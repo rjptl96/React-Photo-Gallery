@@ -8,24 +8,28 @@
     <link rel="stylesheet" type="text/css" href="photoGallery.css">
     <link rel="stylesheet" type="text/css" href="testWHS2.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
-<div id="query">
-    <P>
-        Load a photo by number:
-    </p>
+    <header style="background-color: white; box-shadow: black 0px 0px 7px;">
+        <div id="headerFB" style="display: flex;">
+            <div id="bookClubTitle">
+                <h1>PHOTOQ</h1>
+            </div>
 
-    <input id="num" placeholder="photo number">
-    <button onclick="photoByNumber()">Submit</button>
-</div>
+            <div id="query">
+                <input id="num" placeholder="photo number">
+                <button id ="sub" onclick="photoByNumber()"><i id= "magglass" class="fa fa-search"></i></button>
+                
+            </div>
+        </div>
 
-<div id="photoDisplay">
-    <img id="photoImg">
-</div>
+    </header>
 
-<h2>PhotoQ</h2>
-<div id="react"></div>
+<main><div id="react"></div></main>
+
+
 
 
 <script src="https://unpkg.com/react@15/dist/react.js"></script>

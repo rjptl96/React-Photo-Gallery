@@ -7,9 +7,6 @@ h2 {
    color: #999;
 }
 
-body {
-     margin: 15px;
-}
 
 div.selectedControls {
 		     display: block;
@@ -21,11 +18,12 @@ div.normalControls {
 
 /* Photo tile - position and size will be given by PhotoGallery */
 div.tile {
-    backgroundColor: #eee;
+    background-color: #eee;
     cursor: pointer;
     overflow: hidden; 
     float: left;
     position: relative;
+    padding-bottom: 10px;
 }
 
 /* Tag styling */

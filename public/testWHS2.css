@@ -9,25 +9,86 @@ body {
 	color: blue;
      }
 
+main
+{
+    background-color: #EFF0F1;
+}
+
 header {
-       text-align: center;
-       padding: 10px;
+       
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 10px;
+    font-weight: bolder;
+    font-size: 2.2em;
 	  
+}
+
+#bookClubTitle
+{
+    flex-grow: 1;
+    color: #304e7e;
+}
+#query
+{
+    
+    flex-grow: 3;
 }
 
 
 
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+#num {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 50%;
+  background: clear;
+}
+
+/* Style the submit button */
+#sub {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: clear;
+  color: black;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.search button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
+
+ #headerFB {
+     display: flex 
+}
 
 main {
      flex: 1 0 auto;  /* the sticky footer trick without the footer */
 }
 
 
-input {
-	border-style: solid;
-	border-radius: 5px;
-	font-size: medium;
-}
+
 
 
 p {

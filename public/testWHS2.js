@@ -5,6 +5,18 @@
 let photos = [
 ];
 
+window.onresize = function() {
+    var w = window.innerWidth;
+    if (w > 480) {
+        ReactDOM.render(React.createElement(App),reactContainer);
+        
+    }
+    if (w < 481) {
+        ReactDOM.render(React.createElement(App),reactContainer);
+        
+    }
+}
+
 
 
 // A react component for a tag
@@ -96,11 +108,24 @@ class App extends React.Component {
     }
 
     render() {
+        var w = window.innerWidth;
+        if (w > 480) {
         return (
-            React.createElement( Gallery, {photos: photos,
+            React.createElement( Gallery, {photos: photos,columns: 3, 
                 onClick: this.selectTile,
                 ImageComponent: ImageTile} )
         );
+        
+    }
+    if (w < 481) {
+        return (
+            React.createElement( Gallery, {photos: photos,columns: 1, 
+                onClick: this.selectTile,
+                ImageComponent: ImageTile} )
+        );
+        
+    }
+        
     }
 
 }

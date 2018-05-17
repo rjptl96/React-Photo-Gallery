@@ -5,17 +5,70 @@
 let photos = [
 ];
 
+function createbutton()
+{
+    document.getElementById('headerFB').style.display = "flex";
+    document.getElementById('num').style.display = "none";
+    document.getElementById('sub').style.display = "none";
+
+
+
+        var header = document.getElementById("query");
+    if (document.getElementById("srch_bttn") === null) {
+            var search_buttn = document.createElement("button");
+            var theglass = document.createElement("i");
+            theglass.id = "smallglass";
+            theglass.className = "fa fa-search"
+
+            //<button id ="sub" onclick="photoByNumber()"><i id= "magglass" class="fa fa-search"></i></button>
+            search_buttn.id = "srch_bttn"
+            //search_buttn.src = "search_icon.jpg";
+            search_buttn.innerHTML
+            search_buttn.style.border = "none";
+
+            search_buttn.appendChild(theglass);
+            header.appendChild(search_buttn);
+            search_buttn.onclick = function() {
+
+                document.getElementById('headerFB').style.display = "block";
+                document.getElementById('num').style.display = "block";
+                document.getElementById('sub').style.display = "block";
+                document.getElementById("srch_bttn").style.display = "none";
+                document.getElementById('bookClubTitle').style.display = "none";
+            };
+            search_buttn.style.display = "block";
+        }
+}
+
 window.onresize = function() {
     var w = window.innerWidth;
     if (w > 480) {
         ReactDOM.render(React.createElement(App),reactContainer);
-        
+        document.getElementById('num').style.display = "block";
+        document.getElementById('sub').style.display = "block";
+        var search_button = document.getElementById('srch_bttn');
+        if (search_button != null)
+            {
+                search_button.parentNode.removeChild(search_button);
+            }
+
+
+
     }
     if (w < 481) {
         ReactDOM.render(React.createElement(App),reactContainer);
-        
+
+
+
+        createbutton();
+
+
+
     }
 }
+
+
+
 
 
 
@@ -111,21 +164,21 @@ class App extends React.Component {
         var w = window.innerWidth;
         if (w > 480) {
         return (
-            React.createElement( Gallery, {photos: photos,columns: 3, 
+            React.createElement( Gallery, {photos: photos,columns: 3,
                 onClick: this.selectTile,
                 ImageComponent: ImageTile} )
         );
-        
+
     }
     if (w < 481) {
         return (
-            React.createElement( Gallery, {photos: photos,columns: 1, 
+            React.createElement( Gallery, {photos: photos,columns: 1,
                 onClick: this.selectTile,
                 ImageComponent: ImageTile} )
         );
-        
+
     }
-        
+
     }
 
 }
@@ -139,6 +192,26 @@ ReactDOM.render(React.createElement(App),reactContainer);
 
 // Called when the user pushes the "submit" button 
 function photoByNumber() {
+
+    var w = window.innerWidth;
+    if (w > 480) {
+
+        document.getElementById('headerFB').style.display = "flex";
+
+
+    }
+    if (w < 481) {
+        document.getElementById('headerFB').style.display = "block";
+        document.getElementById('bookClubTitle').style.display = "block";
+        var search_button = document.getElementById('srch_bttn');
+        if (search_button != null)
+            {
+                search_button.parentNode.removeChild(search_button);
+            }
+        createbutton();
+
+
+    }
 
 	var num = document.getElementById("num").value;
 	if (num != "")

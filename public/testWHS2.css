@@ -1,99 +1,101 @@
 
 body {
-	min-height: 100vh;  /* need this line to 
-					tell body to fill viewport */
-	font-family: 'Montserrat', sans-serif;
-	background-color: white;
-	display: flex;
-	flex-direction: column;
-	color: blue;
-     }
+    min-height: 100vh;
+    /* need this line to
+                      tell body to fill viewport */
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: blue;
+}
 
-main
-{
+main {
     background-color: #EFF0F1;
 }
 
 header {
-       
+
     padding-bottom: 30px;
     padding-top: 30px;
     padding-left: 10px;
+    padding-right: 10px;
     font-weight: bolder;
     font-size: 2.2em;
-	  
+
 }
 
-#bookClubTitle
-{
+#bookClubTitle {
     flex-grow: 1;
     color: #304e7e;
 }
-#query
-{
-    
+
+#query {
+
     flex-grow: 3;
 }
 
-
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Style the search field */
 #num {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 50%;
-  background: clear;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 50%;
+    background: clear;
 }
 
 /* Style the submit button */
 #sub {
-  float: left;
-  width: 10%;
-  padding: 10px;
-  background: clear;
-  color: black;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: clear;
+    color: black;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+
+#srch_bttn {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: clear;
+    color: black;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
 }
 
 form.search button:hover {
-  background: #0b7dda;
+    background: #0b7dda;
 }
 
 /* Clear floats */
 form.search::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
-
-
-
-
- #headerFB {
-     display: flex 
+#headerFB {
+    display: flex
 }
 
 main {
-     flex: 1 0 auto;  /* the sticky footer trick without the footer */
+    flex: 1 0 auto; /* the sticky footer trick without the footer */
 }
 
-
-
-
-
 p {
-	font-size: medium;
-	margin: 10px;
+    font-size: medium;
+    margin: 10px;
 }
 
 div#photoDisplay {
@@ -105,3 +107,34 @@ img {
     width: 100%;
 }
 
+@media only screen and (max-width: 480px) {
+    header {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #num {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: clear;
+    }
+
+
+    /* Style the submit button */
+    #sub {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: clear;
+        color: black;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+}

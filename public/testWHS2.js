@@ -43,6 +43,7 @@ function createbutton()
 window.onresize = function() {
     var w = window.innerWidth;
     if (w > 480) {
+        document.getElementById('bookClubTitle').style.display = "block";
         ReactDOM.render(React.createElement(App),reactContainer);
         document.getElementById('num').style.display = "block";
         document.getElementById('sub').style.display = "block";
@@ -197,6 +198,7 @@ function photoByNumber() {
     if (w > 480) {
 
         document.getElementById('headerFB').style.display = "flex";
+        document.getElementById('bookClubTitle').style.display = "block";
 
 
     }
@@ -240,6 +242,12 @@ function reqListener () {
     {
         //display.src = "http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[0].fileName;
         var i;
+        if(json.length > 0)
+        {
+            document.getElementById('initialtext').style.display = "none";
+        }
+
+
         for (i = 0; i< json.length ; i++)
         {
             var car = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height };

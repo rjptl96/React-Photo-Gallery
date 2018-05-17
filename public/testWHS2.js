@@ -173,6 +173,10 @@ class App extends React.Component {
         if (w >= 1824){
             columns1 = 4;
         }
+        if(w<480)
+        {
+            columns1 = 1;
+        }
 
         return (
             React.createElement( Gallery, {photos: photos,columns: columns1,

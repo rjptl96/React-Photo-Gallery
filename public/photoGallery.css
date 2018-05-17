@@ -23,7 +23,6 @@ div.tile {
     overflow: hidden; 
     float: left;
     position: relative;
-    padding-bottom: 10px;
 }
 
 /* Tag styling */

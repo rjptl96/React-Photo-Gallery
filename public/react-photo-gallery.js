@@ -455,7 +455,7 @@ Gallery.propTypes = {
 
 Gallery.defaultProps = {
   columns: 3,
-  margin: 2
+  margin: 8
 };
 
 return Gallery;

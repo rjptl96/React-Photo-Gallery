@@ -1,6 +1,9 @@
 var fs = require('fs');
 var url = require('url');
 var http = require('http');
+http.globalAgent.maxSockets = 1;
+
+
 const sqlite3 = require('sqlite3').verbose();
 
 var sizeOf = require('image-size');

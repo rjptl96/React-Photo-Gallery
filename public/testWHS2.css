@@ -135,6 +135,14 @@ img {
     }
     #bookClubTitle {
         padding-bottom: 0;
+        padding-top: 10px;
+    }
+    #srch_bttn
+    {
+        padding-left: 70px;
+        padding-right: 10px;
+        width: 100%;
+        font-size: 30px;
     }
 
     /* Style the submit button */

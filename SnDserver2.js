@@ -14,16 +14,7 @@ function fileServer(request, response) {
 
     var thequery = myURL.path.split('/query/');
 
-    if (thequery[0] === "") {
-
-        response.writeHead(200, {
-            "Content-Type": "text/html"
-        });
-        response.write("<h1>Hello!</h1>");
-        response.write("<p>You asked for <code>" + thequery[1] + "</code></p>");
-        response.end();
-    }
-    else if (myURL.pathname === '/query' && myURL.query && myURL.query.numList  )
+    if (myURL.pathname === '/query' && myURL.query && myURL.query.numList  )
     {
         var thenums = myURL.query.numList;
 
@@ -46,8 +37,6 @@ function fileServer(request, response) {
         // }
 
     }
-
-
     else
         {
             request.addListener('end', function() {
@@ -64,6 +53,8 @@ function fileServer(request, response) {
 function dataCallback(err, rowData,response) {
     if (err) {
         console.log("error: ",err);
+        response.writeHead(404, {"Content-Type": "application/json"});
+        response.end();
     }
     else {
         var listObj = JSON.stringify(rowData);

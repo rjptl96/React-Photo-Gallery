@@ -221,13 +221,14 @@ function photoByNumber() {
 
     }
 
-	var num = document.getElementById("num").value;
-	if (num != "")
+	var numString = document.getElementById("num").value;
+    numString.replace(/^\s+ | ^\,+ | \s+$ | \,+$/,'')
+	if (numString != "")
     {
         var oReq = new XMLHttpRequest();
-        var url = "query?numList="+num;
-        var newchar = '+'
-        url = url.split(',').join(newchar);
+        var numList = numString.split(/[\s,]+/);
+        var numQueryString = numList.join('+');
+        var url = "query?numList="+numQueryString;
         oReq.open("GET", url);  // setup callback
         oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
         oReq.send();

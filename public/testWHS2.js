@@ -256,8 +256,8 @@ function reqListener () {
 
         for (i = 0; i< json.length ; i++)
         {
-            var car = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height };
-            photos.push(car);
+            var theimage = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height };
+            photos.push(theimage);
         }
 
 

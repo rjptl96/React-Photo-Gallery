@@ -14,9 +14,9 @@ function fileServer(request, response) {
 
     var thequery = myURL.path.split('/query/');
 
-    if (myURL.pathname === '/query' && myURL.query && myURL.query.numList  )
+    if (myURL.pathname === '/query' && myURL.query && myURL.query.keyList  )
     {
-        var thenums = myURL.query.numList;
+        var thenums = myURL.query.keyList;
 
         var newchar = ',';
         thenums = thenums.split(' ').join(newchar);

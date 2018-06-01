@@ -77,11 +77,6 @@ function annotateImage() {
 
     }
 
-    function myfunc()
-    {
-        console.log("WAITING");
-    }
-
 
     // The code that makes a request to the API
     // Uses the Node request module, which packs up and sends off
@@ -121,8 +116,14 @@ function annotateImage() {
                 {
                     thelables = thelables + "," + thelable[i].description;
                 }
-                thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
+                //thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
                 var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
+
+                console.log(string);
+                db.all( string, function (err, rowData) {
+                    dataCallback(err, rowData);
+
+                });
             }
             else if (thelable != null && thelandmark == null)
             {
@@ -133,23 +134,25 @@ function annotateImage() {
                 }
                 var string = 'UPDATE photoTags SET (location , tags) = ("","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
 
+                console.log(string);
+                db.all( string, function (err, rowData) {
+                    dataCallback(err, rowData);
+
+                });
+
             }
             else if (thelable == null && thelandmark != null)
             {
                 var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","") ' + 'WHERE fileName = \'' + result + '\'';
 
-            }
-            else
-            {
-                var string = 'UPDATE photoTags SET (location , tags) = ("","") ' + 'WHERE fileName = \'' + result + '\'';
+                console.log(string);
+                db.all( string, function (err, rowData) {
+                    dataCallback(err, rowData);
+
+                });
             }
             //var string = 'UPDATE photoTags SET tags = \'' + result + '\' WHERE fileName = \'' + result + '\'';
 
-            console.log(string);
-            db.all( string, function (err, rowData) {
-                dataCallback(err, rowData);
-
-            });
 
 
             //console.log(APIresponseJSON.landmarkAnnotations[0].locations);

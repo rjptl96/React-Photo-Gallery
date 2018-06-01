@@ -228,7 +228,7 @@ function photoByNumber() {
         var oReq = new XMLHttpRequest();
         var numList = numString.split(/[\s,]+/);
         var numQueryString = numList.join('+');
-        var url = "query?numList="+numQueryString;
+        var url = "query?keyList="+numQueryString;
         oReq.open("GET", url);  // setup callback
         oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
         oReq.send();

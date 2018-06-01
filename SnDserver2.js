@@ -20,7 +20,15 @@ function fileServer(request, response) {
 
         var newchar = ',';
         thenums = thenums.split(' ').join(newchar);
-        db.all( ' SELECT * FROM photoTags WHERE idNum IN (' + thenums + ')', function (err, rowData) {
+        var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
+        for (var i = 1; i < myURL.query["query?keyList"].length; i++)
+        {
+            theDBstring = theDBstring+ 'AND (location = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+        }
+
+
+
+        db.all( theDBstring, function (err, rowData) {
             dataCallback(err, rowData,response);
 
         });

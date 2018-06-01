@@ -226,9 +226,16 @@ function photoByNumber() {
 	if (numString != "")
     {
         var oReq = new XMLHttpRequest();
-        var numList = numString.split(/[\s,]+/);
-        var numQueryString = numList.join('+');
-        var url = "query?keyList="+numQueryString;
+        numString = numString.replace(", ", ",");
+        var numList = numString.split(',');
+        var url = "query?keyList="+numList[0];
+        for (var i = 0; i < numList.length ;i++)
+        {
+            url = url + "&query?keyList="+numList[i];
+        }
+
+       // var numQueryString = numList.join('+');
+       // var url = "query?keyList="+numQueryString;
         oReq.open("GET", url);  // setup callback
         oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
         oReq.send();

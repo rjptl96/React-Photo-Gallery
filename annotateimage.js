@@ -5,7 +5,7 @@ const result = dotenv.config({path: 'apikey.env'})
 var fs = require('fs');
 var url = require('url');
 var http = require('http');
-http.globalAgent.maxSockets = 1;
+
 
 
 const sqlite3 = require('sqlite3').verbose();
@@ -28,6 +28,7 @@ function annotateImage() {
 
     theurl = 'https://vision.googleapis.com/v1/images:annotate?key=' + process.env.MYAPIKEY;
 
+
     var data = fs.readFileSync('photoList.json');
     if (! data) {
         console.log("cannot read 6whs.json");
@@ -36,7 +37,7 @@ function annotateImage() {
         imgList = listObj.photoURLs;
     }
     var i;
-    for (i = 0; i < 2; i++) {
+    for (i = 100; i < 700; i++) {
         // myURL = url.parse(imgList[i], true);
         imgUrl = imgList[i];
         APIrequestObject = {
@@ -50,7 +51,11 @@ function annotateImage() {
                     },
                     "features":[
                         {
-                            "type": "LABEL_DETECTION" , "type": "LANDMARK_DETECTION"
+                            "type":"LABEL_DETECTION",
+                            "maxResults":6
+                        },{
+                            "type":"LANDMARK_DETECTION",
+                            "maxResults":6
                         }
                     ]
                 }
@@ -71,7 +76,10 @@ function annotateImage() {
 
     }
 
-
+    function myfunc()
+    {
+        console.log("WAITING");
+    }
 
 
     // The code that makes a request to the API
@@ -93,7 +101,48 @@ function annotateImage() {
             var str = requesturl.path;
             var n = str.lastIndexOf('/');
             var result = str.substring(n + 1);
-            var string = 'UPDATE photoTags SET tags = \'' + result + '\' WHERE fileName = \'' + result + '\'';
+            var thelandmark = null;
+            var thelable = null;
+            if (APIresponseJSON.labelAnnotations != null ||APIresponseJSON.labelAnnotations != undefined )
+            {
+                thelable = APIresponseJSON.labelAnnotations;
+            }
+            if (APIresponseJSON.landmarkAnnotations != null ||APIresponseJSON.landmarkAnnotations != undefined )
+            {
+                thelandmark = APIresponseJSON.landmarkAnnotations;
+            }
+            
+            if (thelable != null && thelandmark != null)
+            {
+                var thelables = thelable[0].description;
+                for (var i = 1; i< thelable.length ; i ++)
+                {
+                    thelables = thelables + "," + thelable[i].description;
+                }
+
+                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
+            }
+            else if (thelable != null && thelandmark == null)
+            {
+                var thelables = thelable[0].description;
+                for (var i = 1; i< thelable.length ; i ++)
+                {
+                    thelables = thelables + "," + thelable[i].description;
+                }
+                var string = 'UPDATE photoTags SET (location , tags) = ("","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
+
+            }
+            else if (thelable == null && thelandmark != null)
+            {
+                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","") ' + 'WHERE fileName = \'' + result + '\'';
+
+            }
+            else
+            {
+                var string = 'UPDATE photoTags SET (location , tags) = ("","") ' + 'WHERE fileName = \'' + result + '\'';
+            }
+            //var string = 'UPDATE photoTags SET tags = \'' + result + '\' WHERE fileName = \'' + result + '\'';
+
             console.log(string);
             db.all( string, function (err, rowData) {
                 dataCallback(err, rowData);
@@ -112,11 +161,11 @@ function dataCallback(err, rowData,response) {
         console.log("error: ",err);
     }
     else {
-        var listObj = JSON.stringify(rowData);
-        response.writeHead(200, {"Content-Type": "application/json"});
-        response.end(listObj);
-
-        //console.log("got: ",rowData,"\n");
+        // var listObj = JSON.stringify(rowData);
+        // response.writeHead(200, {"Content-Type": "application/json"});
+        // response.end(listObj);
+        //
+        // //console.log("got: ",rowData,"\n");
     }
 }
 // Do it!

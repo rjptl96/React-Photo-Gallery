@@ -5,6 +5,7 @@ const result = dotenv.config({path: 'apikey.env'})
 var fs = require('fs');
 var url = require('url');
 var http = require('http');
+var i = 0;
 
 
 
@@ -36,8 +37,8 @@ function annotateImage() {
         listObj = JSON.parse(data);
         imgList = listObj.photoURLs;
     }
-    var i;
-    for (i = 100; i < 700; i++) {
+
+    if (i < imgList.length) {
         // myURL = url.parse(imgList[i], true);
         imgUrl = imgList[i];
         APIrequestObject = {
@@ -109,6 +110,7 @@ function annotateImage() {
             }
             if (APIresponseJSON.landmarkAnnotations != null ||APIresponseJSON.landmarkAnnotations != undefined )
             {
+
                 thelandmark = APIresponseJSON.landmarkAnnotations;
             }
             
@@ -119,7 +121,7 @@ function annotateImage() {
                 {
                     thelables = thelables + "," + thelable[i].description;
                 }
-
+                thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
                 var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
             }
             else if (thelable != null && thelandmark == null)
@@ -161,6 +163,8 @@ function dataCallback(err, rowData,response) {
         console.log("error: ",err);
     }
     else {
+        i++;
+        annotateImage();
         // var listObj = JSON.stringify(rowData);
         // response.writeHead(200, {"Content-Type": "application/json"});
         // response.end(listObj);

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39566366-4086-4444-8c52-42988f68b9d0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhotoQ.db" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoQ.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/annotateimage.js" beforeDir="false" afterPath="$PROJECT_DIR$/annotateimage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apikey.env" beforeDir="false" afterPath="$PROJECT_DIR$/apikey.env" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="annotateimage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/annotateimage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="232">
+              <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="166" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -49,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/apikey.env">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="48" selection-start-column="9" selection-end-column="48" />
+              <caret column="48" selection-start-column="9" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -228,12 +230,12 @@
       <workItem from="1527282952832" duration="958000" />
       <workItem from="1527714260105" duration="64000" />
       <workItem from="1527714601813" duration="4267000" />
-      <workItem from="1527794405374" duration="4535000" />
+      <workItem from="1527794405374" duration="7766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30743000" />
+    <option name="totallyTimeSpent" value="33974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="822" extended-state="0" />
@@ -245,7 +247,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3374317" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39344263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -275,30 +277,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/annotateimage.js</url>
-          <line>105</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/annotateimage.js</url>
-          <line>145</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/annotateimage.js</url>
-          <line>42</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/annotateimage.js</url>
-          <line>80</line>
+          <line>81</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/annotateimage.js</url>
+          <line>165</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/annotateimage.js</url>
+          <line>121</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="38" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -622,7 +618,7 @@
     <entry file="file://$PROJECT_DIR$/apikey.env">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="48" selection-start-column="9" selection-end-column="48" />
+          <caret column="48" selection-start-column="9" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -642,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/annotateimage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="232">
+          <caret line="165" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="166" selection-end-column="24" />
         </state>
       </provider>
     </entry>

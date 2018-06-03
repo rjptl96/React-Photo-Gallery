@@ -14,31 +14,50 @@ function fileServer(request, response) {
 
     var thequery = myURL.path.split('/query/');
 
-    if (myURL.pathname === '/query' && myURL.query && myURL.query.keyList  )
+    if (myURL.pathname === '/query' && myURL.query && (myURL.query.keyList ||  myURL.query.fileName ))
     {
         var thenums = myURL.query.keyList;
 
-        if ( myURL.query["query?keyList"] != undefined)
+        if(myURL.query.fileName != undefined)
         {
-            var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
-            for (var i = 1; i < myURL.query["query?keyList"].length; i++)
+            var tags = myURL.query["query?taglist"][0];
+            for (var i = 1; i < myURL.query["query?taglist"].length; i++)
             {
-                theDBstring = theDBstring+ 'AND (location = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+                tags = tags+ ','+ myURL.query["query?taglist"][i];
             }
+            var string = 'UPDATE photoTags SET (tags) = ("'+tags+'") ' + 'WHERE fileName = \'' + encodeURI(myURL.query.fileName) + '\'';
+
+            console.log(string);
+            db.all( string, function (err, rowData) {
+                updateCallback(err, rowData);
+
+            });
         }
         else
         {
-            var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+thenums+'" OR tags LIKE "%'+thenums+'%")';
+            if ( myURL.query["query?keyList"] != undefined)
+            {
+                var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
+                for (var i = 1; i < myURL.query["query?keyList"].length; i++)
+                {
+                    theDBstring = theDBstring+ 'AND (location = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+                }
+            }
+            else
+            {
+                var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+thenums+'" OR tags LIKE "%'+thenums+'%")';
 
+            }
+            db.all( theDBstring, function (err, rowData) {
+                dataCallback(err, rowData,response);
+
+            });
         }
 
 
 
 
-        db.all( theDBstring, function (err, rowData) {
-            dataCallback(err, rowData,response);
 
-        });
         // if (myURL.query.num >= 0 && myURL.query.num < 989)
         // {
         //     response.writeHead(200, {"Content-Type": "application/json"});
@@ -79,6 +98,17 @@ function dataCallback(err, rowData,response) {
         //console.log("got: ",rowData,"\n");
     }
 }
+
+function updateCallback(err, rowData,response) {
+    if (err) {
+        console.log("error: ",err);
+    }
+    else {
+
+        console.log("Updated");
+    }
+}
+
 
 var server = http.createServer(fileServer);
 

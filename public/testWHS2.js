@@ -108,6 +108,24 @@ class TileControl extends React.Component {
         array = array.filter(a => a !== obj.index);
         var update = array.join(',');
         this.setState({ thetagarray: array });
+        if (this.state.theimage != "")
+        {
+            var oReq = new XMLHttpRequest();
+            //numString = numString.replace(", ", ",");
+            //var numList = numString.split(',');
+            var url = "query?fileName="+this.state.theimage;
+            for (var i = 0; i < array.length ;i++)
+            {
+                url = url + "&query?taglist="+array[i];
+            }
+
+            // var numQueryString = numList.join('+');
+            // var url = "query?keyList="+numQueryString;
+            oReq.open("GET", url);  // setup callback
+            oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
+            oReq.send();
+        }
+
     }
     render () {
         // remember input vars in closure

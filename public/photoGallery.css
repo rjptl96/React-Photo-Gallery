@@ -39,8 +39,8 @@ p.tagText {
    left: 4px; 
    top: 4px;
    zIndex: 2;
-   background-color: blue;
-   padding: 5px;
+   background-color: #86b2b4;
+   padding: 10px;
    border-radius: 5px;
    color: white;
    word-break: break-all;

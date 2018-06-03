@@ -9,7 +9,12 @@ h2 {
 
 
 div.selectedControls {
-		     display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
 }
 
 div.normalControls {
@@ -28,8 +33,7 @@ div.tile {
 /* Tag styling */
 p.tagText {
    left: 4px; 
-   top: 4px; 
-   position: absolute; 
+   top: 4px;
    zIndex: 2;
    background-color: blue;
    padding: 5px;

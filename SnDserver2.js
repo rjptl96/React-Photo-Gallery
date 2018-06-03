@@ -18,13 +18,20 @@ function fileServer(request, response) {
     {
         var thenums = myURL.query.keyList;
 
-        var newchar = ',';
-        thenums = thenums.split(' ').join(newchar);
-        var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
-        for (var i = 1; i < myURL.query["query?keyList"].length; i++)
+        if ( myURL.query["query?keyList"] != undefined)
         {
-            theDBstring = theDBstring+ 'AND (location = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+            var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
+            for (var i = 1; i < myURL.query["query?keyList"].length; i++)
+            {
+                theDBstring = theDBstring+ 'AND (location = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+            }
         }
+        else
+        {
+            var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+thenums+'" OR tags LIKE "%'+thenums+'%")';
+
+        }
+
 
 
 

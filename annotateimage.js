@@ -5,7 +5,7 @@ const result = dotenv.config({path: 'apikey.env'})
 var fs = require('fs');
 var url = require('url');
 var http = require('http');
-var i = 0;
+var i = 801;
 
 
 
@@ -116,8 +116,17 @@ function annotateImage() {
                 {
                     thelables = thelables + "," + thelable[i].description;
                 }
-                //thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
-                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
+                if (thelandmark[0].description != undefined)
+                {
+                    //thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
+                    var thelandmarkss = thelandmark[0].description.toLowerCase();
+                }
+                else {
+                    var thelandmarkss = thelandmark[0].description;
+                }
+
+
+                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmarkss + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
 
                 console.log(string);
                 db.all( string, function (err, rowData) {
@@ -143,8 +152,24 @@ function annotateImage() {
             }
             else if (thelable == null && thelandmark != null)
             {
-                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmark[0].description + '","") ' + 'WHERE fileName = \'' + result + '\'';
+                if (thelandmark[0].description != undefined)
+                {
+                    var thelandmarkss = thelandmark[0].description.toLowerCase();
+                }
+                else {
+                    var thelandmarkss = thelandmark[0].description;
+                }
+                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmarkss + '","") ' + 'WHERE fileName = \'' + result + '\'';
 
+                console.log(string);
+                db.all( string, function (err, rowData) {
+                    dataCallback(err, rowData);
+
+                });
+            }
+            else
+            {
+                var string = 'UPDATE photoTags SET (location , tags) = ("","") ' + 'WHERE fileName = \'' + result + '\'';
                 console.log(string);
                 db.all( string, function (err, rowData) {
                     dataCallback(err, rowData);

@@ -91,15 +91,23 @@ class TileControl extends React.Component {
         // remember input vars in closure
         var _selected = this.props.selected;
         var _src = this.props.src;
+        var _tags = this.props.tags.split(',');
+
         // parse image src for photo name
         var photoName = _src.split("/").pop();
         photoName = photoName.split('%20').join(' ');
+        var objects = [];
 
+        for (var x = 0; x < _tags.length; x++) {
+            //objects.push({key: _tags[x], text: _tags[x] });
+            objects.push(React.createElement(Tag,
+                {key: _tags[x], text: _tags[x] }));
+        }
         return ( React.createElement('div',
                 {className: _selected ? 'selectedControls' : 'normalControls'},
                 // div contents - so far only one tag
-                React.createElement(Tag,
-                    { text: photoName })
+
+                objects
             )// createElement div
         )// return
     } // render
@@ -130,7 +138,7 @@ class ImageTile extends React.Component {
                 // contents of div - the Controls and an Image
                 React.createElement(TileControl,
                     {selected: _selected,
-                        src: _photo.src}),
+                        src: _photo.src, tags: _photo.tags}),
                 React.createElement('img',
                     {className: _selected ? 'selected' : 'normal',
                         src: _photo.src,
@@ -229,7 +237,7 @@ function photoByNumber() {
         numString = numString.replace(", ", ",");
         var numList = numString.split(',');
         var url = "query?keyList="+numList[0];
-        for (var i = 0; i < numList.length ;i++)
+        for (var i = 1; i < numList.length ;i++)
         {
             url = url + "&query?keyList="+numList[i];
         }
@@ -264,7 +272,7 @@ function reqListener () {
 
         for (i = 0; i< json.length ; i++)
         {
-            var theimage = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height };
+            var theimage = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height, tags: json[i].tags };
             photos.push(theimage);
         }
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39566366-4086-4444-8c52-42988f68b9d0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/photoGallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/photoGallery.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/testWHS2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/testWHS2.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -38,8 +37,8 @@
       <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="85" column="40" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+            <state relative-caret-position="136">
+              <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -65,7 +64,7 @@
       <file leaf-file-name="testWHS2.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
+            <state relative-caret-position="-981">
               <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
             </state>
           </provider>
@@ -74,8 +73,8 @@
       <file leaf-file-name="testWHS2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="67" lean-forward="true" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+            <state relative-caret-position="230">
+              <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -111,17 +110,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>for</find>
-      <find>thelandmark</find>
-      <find>description.indexOf</find>
-      <find>numlist</find>
       <find>keylis</find>
       <find>react.crea</find>
       <find>class Tag extends React.Component</find>
       <find>theimage</find>
       <find>createElement</find>
       <find>props</find>
-      <find>src</find>
       <find>split</find>
       <find>_tags</find>
       <find>React.createElement</find>
@@ -132,7 +126,6 @@
       <find>onclick</find>
       <find>selectTile</find>
       <find>return _onClick</find>
-      <find>tags</find>
       <find>photo</find>
       <find>index</find>
       <find>photo:</find>
@@ -141,6 +134,12 @@
       <find>photos</find>
       <find>tagarray</find>
       <find>setState</find>
+      <find>join</find>
+      <find>src</find>
+      <find>tags</find>
+      <find>prop</find>
+      <find>ajax</find>
+      <find>reqListener</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,10 +177,10 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="822" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -276,12 +275,12 @@
       <workItem from="1527794405374" duration="8130000" />
       <workItem from="1527874222244" duration="1816000" />
       <workItem from="1527886762079" duration="6445000" />
-      <workItem from="1527966933922" duration="12923000" />
+      <workItem from="1527966933922" duration="14949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55522000" />
+    <option name="totallyTimeSpent" value="57548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="822" extended-state="0" />
@@ -293,7 +292,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.013661202" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.013661202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -344,7 +343,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>295</line>
+          <line>296</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
@@ -663,20 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="67" lean-forward="true" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/react-photo-gallery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -705,10 +690,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-981">
+          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="85" column="40" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+        <state relative-caret-position="136">
+          <caret line="256" column="5" lean-forward="true" selection-start-line="256" selection-start-column="5" selection-end-line="256" selection-end-column="5" />
         </state>
       </provider>
     </entry>

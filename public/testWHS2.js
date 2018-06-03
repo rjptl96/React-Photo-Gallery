@@ -98,7 +98,7 @@ class TileControl extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { thetagarray: this.props.tags };
+        this.state = { thetagarray: this.props.tags, theimage:this.props.filename};
         this.selectTag = this.selectTag.bind(this);
     }
     selectTag(event, obj) {
@@ -106,6 +106,7 @@ class TileControl extends React.Component {
         //let photos = this.state.photos;
         let array = this.state.thetagarray;
         array = array.filter(a => a !== obj.index);
+        var update = array.join(',');
         this.setState({ thetagarray: array });
     }
     render () {
@@ -159,7 +160,7 @@ class ImageTile extends React.Component {
                 // contents of div - the Controls and an Image
                 React.createElement(TileControl,
                     {selected: _selected,
-                        src: _photo.src, tags: _photo.tags.split(',')}),
+                        src: _photo.src, tags: _photo.tags.split(','), filename: _photo.fname}),
                 React.createElement('img',
                     {className: _selected ? 'selected' : 'normal',
                         src: _photo.src,
@@ -293,7 +294,7 @@ function reqListener () {
 
         for (i = 0; i< json.length ; i++)
         {
-            var theimage = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height, tags: json[i].tags };
+            var theimage = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height, tags: json[i].tags, fname: json[i].fileName };
             photos.push(theimage);
         }
 

@@ -6,6 +6,33 @@ var countries = [];
 var selectedtags = [];
 let photoss = [
 ];
+
+/* function to add an onclick value to a DOM element */
+function addOnclick(element, func, param) {
+
+    // the closure of noarg includes local variables
+    // "func" and "param"
+    function noarg() {
+        func(param);
+    }
+    element.onclick = noarg; // it will remember its closure
+}
+
+function disappear(bird) {
+    var birdDiv = document.getElementById(bird);
+    var par = birdDiv.parentElement;
+    birdDiv.parentElement.removeChild(birdDiv);
+
+    for (var k = 1; k < par.children.length; k++)
+    {
+        selectedtags.push(par.children[k].innerHTML)
+    }
+    photoByNumber();
+    // Note: in Assn 3 you need to actually remove the tile from the DOM,
+    // not just give it 'display: "none"'.
+}
+
+
 function getautocomplete()
 {
     var numString = document.getElementById("num").value;
@@ -253,9 +280,10 @@ class App extends React.Component {
 
     selectTile(event, obj) {
         console.log("in onclick!", obj);
-        let photos = this.state.photos;
-        photos[obj.index].selected = !photos[obj.index].selected;
+        var photoses = photoss;
         this.setState({ photos: photoss });
+        photoses[obj.index].selected = !photoses[obj.index].selected;
+
     }
 
     render() {
@@ -321,34 +349,88 @@ function photoByNumber() {
 
 	var numString = document.getElementById("num").value;
     numString.replace(/^\s+ | ^\,+ | \s+$ | \,+$/,'')
-	if (selectedtags.length >0)
+	if (selectedtags.length >0 || numString != "" )
     {
-        var oReq = new XMLHttpRequest();
-        numString = numString.replace(', ', ',');
-        // var numList = numString.split(',');
-        var url = "query?keyList="+selectedtags[0];
-        for (var i = 1; i < selectedtags.length ;i++)
+        if (selectedtags.length == 0)
         {
-            url = url + "&keyList="+selectedtags[i];
-        }
+            var oReq = new XMLHttpRequest();
+            numString = numString.replace(", ", ",");
+            var numList = numString.split(',');
+            var url = "query?keyList="+numList[0];
+            for (var i = 1; i < numList.length ;i++)
+            {
+                url = url + "&keyList="+numList[i];
+            }
 
-        while (document.getElementById("selected").firstChild) {
-            document.getElementById("selected").removeChild(document.getElementById("selected").firstChild);
-        }
-        for (var i = 0; i < selectedtags.length ;i++)
-        {
+            while (document.getElementById("selected").firstChild) {
+                document.getElementById("selected").removeChild(document.getElementById("selected").firstChild);
+            }
             var j = document.createElement("DIV");
-            j.className = "selectedtags";
-            j.innerHTML = selectedtags[i];
+            j.id = "selectedLabel";
+            j.innerHTML = "You Searched For: ";
             document.getElementById("selected").appendChild(j);
-        }
-        selectedtags = [];
+            for (var i = 0; i < numList.length ;i++)
+            {
+                var j = document.createElement("DIV");
+                j.className = "selectedtags";
+                j.id = numList[i];
+                j.innerHTML = numList[i];
+                addOnclick(j, disappear, numList[i]);
+                document.getElementById("selected").appendChild(j);
 
-       // var numQueryString = numList.join('+');
-       // var url = "query?keyList="+numQueryString;
-        oReq.open("GET", url);  // setup callback
-        oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
-        oReq.send();
+            }
+            selectedtags = [];
+
+            // var numQueryString = numList.join('+');
+            // var url = "query?keyList="+numQueryString;
+            oReq.open("GET", url);  // setup callback
+            oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
+            oReq.send();
+
+
+
+
+
+
+
+        }
+        else
+        {
+            var oReq = new XMLHttpRequest();
+            numString = numString.replace(', ', ',');
+            // var numList = numString.split(',');
+            var url = "query?keyList="+selectedtags[0];
+            for (var i = 1; i < selectedtags.length ;i++)
+            {
+                url = url + "&keyList="+selectedtags[i];
+            }
+
+            while (document.getElementById("selected").firstChild) {
+                document.getElementById("selected").removeChild(document.getElementById("selected").firstChild);
+            }
+            var j = document.createElement("DIV");
+            j.id = "selectedLabel";
+            j.innerHTML = "You Searched For: ";
+            document.getElementById("selected").appendChild(j);
+            for (var i = 0; i < selectedtags.length ;i++)
+            {
+                var j = document.createElement("DIV");
+                j.className = "selectedtags";
+                j.id = selectedtags[i];
+                j.innerHTML = selectedtags[i];
+                addOnclick(j, disappear, selectedtags[i]);
+                document.getElementById("selected").appendChild(j);
+
+            }
+            selectedtags = [];
+
+            // var numQueryString = numList.join('+');
+            // var url = "query?keyList="+numQueryString;
+            oReq.open("GET", url);  // setup callback
+            oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
+            oReq.send();
+        }
+
     }
 
 
@@ -497,5 +579,4 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     });
 }
-
 

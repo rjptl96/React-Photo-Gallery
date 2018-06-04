@@ -53,11 +53,19 @@ function fileServer(request, response) {
         {
             if ( myURL.query["keyList"] != undefined)
             {
-                var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+myURL.query["keyList"][0]+'" OR tags LIKE "%'+myURL.query["keyList"][0]+'%")';
-                for (var i = 1; i < myURL.query["keyList"].length; i++)
+
+                if ((typeof myURL.query.keyList) == "string")
                 {
-                    theDBstring = theDBstring+ 'AND (landmark = "'+myURL.query["keyList"][i]+'" OR tags LIKE "%'+myURL.query["keyList"][i]+'%")';
+                    var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+myURL.query["keyList"]+'" OR tags LIKE "%'+myURL.query["keyList"]+'%")';                }
+                else
+                {
+                    var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+myURL.query["keyList"][0]+'" OR tags LIKE "%'+myURL.query["keyList"][0]+'%")';
+                    for (var i = 1; i < myURL.query["keyList"].length; i++)
+                    {
+                        theDBstring = theDBstring+ 'AND (landmark = "'+myURL.query["keyList"][i]+'" OR tags LIKE "%'+myURL.query["keyList"][i]+'%")';
+                    }
                 }
+
             }
             else
             {

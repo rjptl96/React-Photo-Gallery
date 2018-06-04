@@ -13,8 +13,25 @@ body {
 div#selected {
     display: flex;
 }
+
+#selectedLabel
+{
+    left: 4px;
+    top: 4px;
+    padding: 10px;
+}
+
 .selectedtags {
     padding-left: 10px;
+    left: 4px;
+    top: 4px;
+    zIndex: 2;
+    background-color: #86b2b4;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    word-break: break-all;
+    margin-left: 10px;
 }
 main {
     position: relative;

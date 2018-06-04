@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="39566366-4086-4444-8c52-42988f68b9d0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhotoQ.db" beforeDir="false" afterPath="$PROJECT_DIR$/PhotoQ.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SnDserver2.js" beforeDir="false" afterPath="$PROJECT_DIR$/SnDserver2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/testWHS2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/testWHS2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/testWHS2.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/testWHS2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/testWHS2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/testWHS2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xxx.json" beforeDir="false" afterPath="$PROJECT_DIR$/xxx.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,11 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="388" column="19" selection-start-line="388" selection-start-column="19" selection-end-line="388" selection-end-column="19" />
+            <state relative-caret-position="245">
+              <caret line="362" column="13" lean-forward="true" selection-start-line="362" selection-start-column="13" selection-end-line="362" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photoGallery.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/photoGallery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -52,8 +63,8 @@
       <file leaf-file-name="testWHS2.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2154">
-              <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="12" />
+            <state relative-caret-position="169">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -79,29 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createDB.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createDB.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="135" selection-start-line="11" selection-start-column="135" selection-end-line="11" selection-end-column="135" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="photoGallery.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/photoGallery.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            <state relative-caret-position="106">
+              <caret line="38" selection-start-line="38" selection-end-line="47" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SnDserver2.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SnDserver2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SnDserver2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+            <state relative-caret-position="247">
+              <caret line="58" column="149" selection-start-line="58" selection-start-column="149" selection-end-line="58" selection-end-column="149" />
             </state>
           </provider>
         </entry>
@@ -115,36 +117,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>join</find>
-      <find>src</find>
-      <find>prop</find>
-      <find>ajax</find>
-      <find>reqListener</find>
-      <find>selectTag</find>
-      <find>listener</find>
-      <find>location</find>
-      <find>oreq</find>
       <find>addeven</find>
       <find>reactContainer</find>
       <find>Gallery</find>
       <find>&quot;, &quot;</find>
       <find>replace</find>
-      <find>thetagarray</find>
-      <find>tags</find>
       <find>autocompleteob</find>
       <find>inp.value = this.ge</find>
-      <find>keylist</find>
       <find>f (selectedtags.length &gt;0)</find>
       <find>dataCallback</find>
       <find>geteleme</find>
       <find>innerText</find>
       <find>inner</find>
       <find>innerH</find>
-      <find>append</find>
       <find>#quer</find>
       <find>child</find>
       <find>photos =</find>
+      <find>filter</find>
+      <find>createe</find>
+      <find>append</find>
+      <find>selectedtags.push</find>
+      <find>selectedtags</find>
+      <find>tags</find>
+      <find>tag</find>
+      <find>appe</find>
+      <find>photos =</find>
+      <find>photoss</find>
+      <find>thetagarray</find>
+      <find>photoby</find>
       <find>const</find>
+      <find>keylist</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -163,10 +165,10 @@
         <option value="$PROJECT_DIR$/public/photoGallery.css" />
         <option value="$PROJECT_DIR$/createDB.js" />
         <option value="$PROJECT_DIR$/annotateimage.js" />
-        <option value="$PROJECT_DIR$/SnDserver2.js" />
         <option value="$PROJECT_DIR$/public/testWHS2.html" />
         <option value="$PROJECT_DIR$/public/testWHS2.css" />
         <option value="$PROJECT_DIR$/public/testWHS2.js" />
+        <option value="$PROJECT_DIR$/SnDserver2.js" />
       </list>
     </option>
   </component>
@@ -285,12 +287,12 @@
       <workItem from="1527886762079" duration="6445000" />
       <workItem from="1527966933922" duration="14949000" />
       <workItem from="1528058460854" duration="5336000" />
-      <workItem from="1528065641787" duration="23096000" />
+      <workItem from="1528065641787" duration="27112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85980000" />
+    <option name="totallyTimeSpent" value="89996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -302,12 +304,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905138" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24278846" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24278846" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.21514423" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.21514423" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -332,28 +334,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/SnDserver2.js</url>
-          <line>109</line>
+          <line>117</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>387</line>
+          <line>469</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/SnDserver2.js</url>
-          <line>117</line>
+          <line>125</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>10</line>
+          <line>37</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>141</line>
+          <line>168</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
@@ -377,16 +379,46 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/SnDserver2.js</url>
-          <line>55</line>
+          <line>110</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="73" />
+          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="77" />
+      <option name="time" value="79" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>(typeof myURL.query.keyList) == &quot;string&quot;</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>typeof myURL.query.keyList</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>typeof myURL.query</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>myURL.query</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>myURL.query.length</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>myURL.query.length()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>myURL.query[&quot;query?keyList&quot;]</expression-string>
         <language-id>JavaScript</language-id>
@@ -399,36 +431,6 @@
       </expression>
       <expression>
         <expression-string>myURL.query.autocomplete.toLowerCase</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>autocompleteOjb[myURL.query.autocomplete]</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Object.keys(listObj.tags)</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Object.keys(listObj)</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>console.log(Object.keys(listObj))</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>console.log(Object.keys(listObj.tags))</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>autocompleteOjb</expression-string>
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -696,20 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/photoGallery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/photoGallery.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/createDB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -744,6 +732,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/annotateimage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="199" column="56" selection-start-line="199" selection-start-column="56" selection-end-line="199" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -754,31 +749,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/annotateimage.js">
+    <entry file="file://$PROJECT_DIR$/public/photoGallery.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="199" column="56" selection-start-line="199" selection-start-column="56" selection-end-line="199" selection-end-column="56" />
+        <state relative-caret-position="106">
+          <caret line="38" selection-start-line="38" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/photoGallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2154">
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SnDserver2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+        <state relative-caret-position="169">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="388" column="19" selection-start-line="388" selection-start-column="19" selection-end-line="388" selection-end-column="19" />
+        <state relative-caret-position="245">
+          <caret line="362" column="13" lean-forward="true" selection-start-line="362" selection-start-column="13" selection-end-line="362" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SnDserver2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="58" column="149" selection-start-line="58" selection-start-column="149" selection-end-line="58" selection-end-column="149" />
         </state>
       </provider>
     </entry>

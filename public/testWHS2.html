@@ -19,7 +19,11 @@
         </div>
 
         <div id="query">
-            <input id="num" placeholder="photo number" onkeydown="getautocomplete()">
+            <form autocomplete="off" action="javascript:void(0);">
+                <div class="autocomplete" style="width:300px;">
+                    <input id="num" placeholder="photo number" onkeydown="getautocomplete()">
+                </div>
+            </form>
             <button id="sub" onclick="photoByNumber()"><i id="magglass" class="fa fa-search"></i></button>
 
         </div>

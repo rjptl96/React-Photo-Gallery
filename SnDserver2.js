@@ -11,6 +11,7 @@ var autocompleteOjb = {};  // global
 auto.makeTagTable(tagTableCallBack);
 function tagTableCallBack(tagTable){
     autocompleteOjb = tagTable;
+
 }
 
 function fileServer(request, response) {
@@ -25,7 +26,11 @@ function fileServer(request, response) {
         var thenums = myURL.query.keyList;
         if (myURL.query.autocomplete != undefined)
         {
-            var listObj =  JSON.stringify(autocompleteOjb[myURL.query.autocomplete]);
+            var listObj =JSON.stringify(autocompleteOjb[myURL.query.autocomplete.toLowerCase()]);
+            listObj = JSON.parse(listObj);
+            listObj = Object.keys(listObj.tags);
+            //listObj = JSON.parse(listObj);
+            listObj = JSON.stringify(listObj)
             response.writeHead(200, {"Content-Type": "application/json"});
             response.end(listObj);
         }
@@ -34,7 +39,7 @@ function fileServer(request, response) {
             var tags = myURL.query["query?taglist"][0];
             for (var i = 1; i < myURL.query["query?taglist"].length; i++)
             {
-                tags = tags+ ','+ myURL.query["query?taglist"][i];
+                tags = tags+ ', '+ myURL.query["query?taglist"][i];
             }
             var string = 'UPDATE photoTags SET (tags) = ("'+tags+'") ' + 'WHERE fileName = \'' + encodeURI(myURL.query.fileName) + '\'';
             auto.makeTagTable(tagTableCallBack);
@@ -46,12 +51,12 @@ function fileServer(request, response) {
         }
         else
         {
-            if ( myURL.query["query?keyList"] != undefined)
+            if ( myURL.query["keyList"] != undefined)
             {
-                var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
-                for (var i = 1; i < myURL.query["query?keyList"].length; i++)
+                var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+myURL.query["keyList"][0]+'" OR tags LIKE "%'+myURL.query["keyList"][0]+'%")';
+                for (var i = 1; i < myURL.query["keyList"].length; i++)
                 {
-                    theDBstring = theDBstring+ 'AND (landmark = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+                    theDBstring = theDBstring+ 'AND (landmark = "'+myURL.query["keyList"][i]+'" OR tags LIKE "%'+myURL.query["keyList"][i]+'%")';
                 }
             }
             else

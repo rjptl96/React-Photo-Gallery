@@ -5,7 +5,7 @@ const result = dotenv.config({path: 'apikey.env'})
 var fs = require('fs');
 var url = require('url');
 var http = require('http');
-var i = 801;
+var i = 881;
 
 
 
@@ -114,11 +114,14 @@ function annotateImage() {
                 var thelables = thelable[0].description;
                 for (var i = 1; i< thelable.length ; i ++)
                 {
-                    thelables = thelables + "," + thelable[i].description;
+                    thelables = thelables + ", " + thelable[i].description;
                 }
                 if (thelandmark[0].description != undefined)
                 {
-                    //thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
+                    if (thelandmark[0].description.search("\\(") != -1)
+                    {
+                        thelandmark[0].description = thelandmark[0].description.substring(0, thelandmark[0].description.indexOf('('));
+                    }
                     var thelandmarkss = thelandmark[0].description.toLowerCase();
                 }
                 else {
@@ -139,7 +142,7 @@ function annotateImage() {
                 var thelables = thelable[0].description;
                 for (var i = 1; i< thelable.length ; i ++)
                 {
-                    thelables = thelables + "," + thelable[i].description;
+                    thelables = thelables + ", " + thelable[i].description;
                 }
                 var string = 'UPDATE photoTags SET (landmark , tags) = ("","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
 

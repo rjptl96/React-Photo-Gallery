@@ -55,6 +55,8 @@ function createbutton()
     document.getElementById('headerFB').style.display = "flex";
     document.getElementById('num').style.display = "none";
     document.getElementById('sub').style.display = "none";
+    document.getElementById('theform').style.display = "none";
+
 
 
 
@@ -77,6 +79,7 @@ function createbutton()
 
                 document.getElementById('headerFB').style.display = "block";
                 document.getElementById('num').style.display = "block";
+                document.getElementById('theform').style.display = "block";
                 document.getElementById('sub').style.display = "block";
                 document.getElementById("srch_bttn").style.display = "none";
                 document.getElementById('bookClubTitle').style.display = "none";

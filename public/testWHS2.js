@@ -4,7 +4,7 @@
 /*An array containing all the country names in the world:*/
 var countries = [];
 var selectedtags = [];
-let photos = [
+let photoss = [
 ];
 function getautocomplete()
 {
@@ -247,7 +247,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { photos: photos };
+        this.state = { photos: photoss };
         this.selectTile = this.selectTile.bind(this);
     }
 
@@ -255,7 +255,7 @@ class App extends React.Component {
         console.log("in onclick!", obj);
         let photos = this.state.photos;
         photos[obj.index].selected = !photos[obj.index].selected;
-        this.setState({ photos: photos });
+        this.setState({ photos: photoss });
     }
 
     render() {
@@ -276,7 +276,7 @@ class App extends React.Component {
         }
 
         return (
-            React.createElement( Gallery, {photos: photos,columns: columns1,
+            React.createElement( Gallery, {photos: photoss,columns: columns1,
                 onClick: this.selectTile,
                 ImageComponent: ImageTile} )
         );
@@ -331,7 +331,19 @@ function photoByNumber() {
         {
             url = url + "&keyList="+selectedtags[i];
         }
+
+        while (document.getElementById("selected").firstChild) {
+            document.getElementById("selected").removeChild(document.getElementById("selected").firstChild);
+        }
+        for (var i = 0; i < selectedtags.length ;i++)
+        {
+            var j = document.createElement("DIV");
+            j.className = "selectedtags";
+            j.innerHTML = selectedtags[i];
+            document.getElementById("selected").appendChild(j);
+        }
         selectedtags = [];
+
        // var numQueryString = numList.join('+');
        // var url = "query?keyList="+numQueryString;
         oReq.open("GET", url);  // setup callback
@@ -370,11 +382,11 @@ function reqListener () {
             document.getElementById('initialtext').style.display = "none";
         }
 
-
+        photoss = [];
         for (i = 0; i< json.length ; i++)
         {
             var theimage = {src:"http://lotus.idav.ucdavis.edu/public/ecs162/UNESCO/" + json[i].fileName, width: json[i].width, height: json[i].height, tags: json[i].tags, fname: json[i].fileName };
-            photos.push(theimage);
+            photoss.push(theimage);
         }
 
 

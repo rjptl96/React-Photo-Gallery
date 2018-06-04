@@ -10,7 +10,12 @@ body {
     flex-direction: column;
     color: blue;
 }
-
+div#selected {
+    display: flex;
+}
+.selectedtags {
+    padding-left: 10px;
+}
 main {
     position: relative;
     background-color: #EFF0F1;

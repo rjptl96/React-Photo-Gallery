@@ -6,19 +6,30 @@ const url = require('url');
 const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database('PhotoQ.db');
 var fs = require('fs');  // file access module
+var auto = require("./makeTagTable");
+var autocompleteOjb = {};  // global
+auto.makeTagTable(tagTableCallBack);
+function tagTableCallBack(tagTable){
+    autocompleteOjb = tagTable;
+}
 
 function fileServer(request, response) {
 
-    const myURL = url.parse(request.url, true);
+    const myURL =url.parse(request.url, true);
     
 
     var thequery = myURL.path.split('/query/');
 
-    if (myURL.pathname === '/query' && myURL.query && (myURL.query.keyList ||  myURL.query.fileName ))
+    if (myURL.pathname === '/query' && myURL.query && (myURL.query.keyList ||  myURL.query.fileName ||  myURL.query.autocomplete ))
     {
         var thenums = myURL.query.keyList;
-
-        if(myURL.query.fileName != undefined)
+        if (myURL.query.autocomplete != undefined)
+        {
+            var listObj =  JSON.stringify(autocompleteOjb[myURL.query.autocomplete]);
+            response.writeHead(200, {"Content-Type": "application/json"});
+            response.end(listObj);
+        }
+        else if(myURL.query.fileName != undefined)
         {
             var tags = myURL.query["query?taglist"][0];
             for (var i = 1; i < myURL.query["query?taglist"].length; i++)
@@ -26,7 +37,7 @@ function fileServer(request, response) {
                 tags = tags+ ','+ myURL.query["query?taglist"][i];
             }
             var string = 'UPDATE photoTags SET (tags) = ("'+tags+'") ' + 'WHERE fileName = \'' + encodeURI(myURL.query.fileName) + '\'';
-
+            auto.makeTagTable(tagTableCallBack);
             console.log(string);
             db.all( string, function (err, rowData) {
                 updateCallback(err, rowData);
@@ -37,15 +48,15 @@ function fileServer(request, response) {
         {
             if ( myURL.query["query?keyList"] != undefined)
             {
-                var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
+                var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+myURL.query["query?keyList"][0]+'" OR tags LIKE "%'+myURL.query["query?keyList"][0]+'%")';
                 for (var i = 1; i < myURL.query["query?keyList"].length; i++)
                 {
-                    theDBstring = theDBstring+ 'AND (location = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
+                    theDBstring = theDBstring+ 'AND (landmark = "'+myURL.query["query?keyList"][i]+'" OR tags LIKE "%'+myURL.query["query?keyList"][i]+'%")';
                 }
             }
             else
             {
-                var theDBstring = 'SELECT * FROM photoTags WHERE (location = "'+thenums+'" OR tags LIKE "%'+thenums+'%")';
+                var theDBstring = 'SELECT * FROM photoTags WHERE (landmark = "'+thenums+'" OR tags LIKE "%'+thenums+'%")';
 
             }
             db.all( theDBstring, function (err, rowData) {

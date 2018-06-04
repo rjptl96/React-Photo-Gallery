@@ -4,7 +4,23 @@
 
 let photos = [
 ];
-
+function getautocomplete()
+{
+    var numString = document.getElementById("num").value;
+    numString.replace(/^\s+ | ^\,+ | \s+$ | \,+$/,'');
+    if (numString.length == 2)
+    {
+        var oReq = new XMLHttpRequest();
+        //numString = numString.replace(", ", ",");
+        //var numList = numString.split(',');
+        var url = "query?autocomplete="+numString;
+        // var numQueryString = numList.join('+');
+        // var url = "query?keyList="+numQueryString;
+        oReq.open("GET", url);  // setup callback
+        oReq.addEventListener("load", autoListener);    // load event occurs when response comes back
+        oReq.send();
+    }
+}
 function createbutton()
 {
     document.getElementById('headerFB').style.display = "flex";
@@ -122,7 +138,7 @@ class TileControl extends React.Component {
             // var numQueryString = numList.join('+');
             // var url = "query?keyList="+numQueryString;
             oReq.open("GET", url);  // setup callback
-            oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
+            //oReq.addEventListener("load", reqListener);    // load event occurs when response comes back
             oReq.send();
         }
 
@@ -292,7 +308,15 @@ function photoByNumber() {
 
 }
 
+function autoListener() {
+    var photoURL = this.responseText;
+    if (photoURL != "")
+    {
+        var json = JSON.parse(photoURL);
+        console.log(json);
+    }
 
+}
 
 function reqListener () {
     var photoURL = this.responseText;

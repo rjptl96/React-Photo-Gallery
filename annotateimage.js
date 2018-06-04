@@ -126,7 +126,7 @@ function annotateImage() {
                 }
 
 
-                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmarkss + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
+                var string = 'UPDATE photoTags SET (landmark , tags) = ("'+thelandmarkss + '","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
 
                 console.log(string);
                 db.all( string, function (err, rowData) {
@@ -141,7 +141,7 @@ function annotateImage() {
                 {
                     thelables = thelables + "," + thelable[i].description;
                 }
-                var string = 'UPDATE photoTags SET (location , tags) = ("","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
+                var string = 'UPDATE photoTags SET (landmark , tags) = ("","'+thelables+'") ' + 'WHERE fileName = \'' + result + '\'';
 
                 console.log(string);
                 db.all( string, function (err, rowData) {
@@ -159,7 +159,7 @@ function annotateImage() {
                 else {
                     var thelandmarkss = thelandmark[0].description;
                 }
-                var string = 'UPDATE photoTags SET (location , tags) = ("'+thelandmarkss + '","") ' + 'WHERE fileName = \'' + result + '\'';
+                var string = 'UPDATE photoTags SET (landmark , tags) = ("'+thelandmarkss + '","") ' + 'WHERE fileName = \'' + result + '\'';
 
                 console.log(string);
                 db.all( string, function (err, rowData) {
@@ -169,7 +169,7 @@ function annotateImage() {
             }
             else
             {
-                var string = 'UPDATE photoTags SET (location , tags) = ("","") ' + 'WHERE fileName = \'' + result + '\'';
+                var string = 'UPDATE photoTags SET (landmark , tags) = ("","") ' + 'WHERE fileName = \'' + result + '\'';
                 console.log(string);
                 db.all( string, function (err, rowData) {
                     dataCallback(err, rowData);
@@ -180,7 +180,7 @@ function annotateImage() {
 
 
 
-            //console.log(APIresponseJSON.landmarkAnnotations[0].locations);
+            //console.log(APIresponseJSON.landmarkAnnotations[0].landmarks);
         }
     } // end callback function
 

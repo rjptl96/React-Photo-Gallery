@@ -18,50 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="makeTagTable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/makeTagTable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="annotateimage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/annotateimage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="199" column="56" selection-start-line="199" selection-start-column="56" selection-end-line="199" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testWHS2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="81" column="73" selection-start-line="81" selection-start-column="73" selection-end-line="81" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photoGallery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/photoGallery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testWHS2.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+            <state relative-caret-position="271">
+              <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -69,11 +30,8 @@
       <file leaf-file-name="testWHS2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="21" column="31" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="229">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -90,8 +48,8 @@
       <file leaf-file-name="photoGallery.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/photoGallery.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="69">
+              <caret line="3" column="7" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -99,8 +57,17 @@
       <file leaf-file-name="SnDserver2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SnDserver2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="-1499">
               <caret line="58" column="149" selection-start-line="58" selection-start-column="149" selection-end-line="58" selection-end-column="149" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testWHS2.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -114,36 +81,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Gallery</find>
-      <find>&quot;, &quot;</find>
-      <find>replace</find>
-      <find>autocompleteob</find>
-      <find>inp.value = this.ge</find>
-      <find>f (selectedtags.length &gt;0)</find>
-      <find>dataCallback</find>
-      <find>geteleme</find>
-      <find>innerText</find>
-      <find>inner</find>
-      <find>innerH</find>
-      <find>#quer</find>
-      <find>child</find>
-      <find>photos =</find>
-      <find>filter</find>
-      <find>createe</find>
-      <find>append</find>
-      <find>selectedtags.push</find>
-      <find>selectedtags</find>
-      <find>tags</find>
-      <find>tag</find>
-      <find>appe</find>
       <find>photos =</find>
       <find>photoss</find>
       <find>thetagarray</find>
       <find>photoby</find>
-      <find>const</find>
       <find>keylist</find>
       <find>document.getElementById('num').style.display</find>
       <find>width</find>
+      <find>const</find>
+      <find>autocomplete-items</find>
+      <find>300px</find>
+      <find>num</find>
+      <find>numauto</find>
+      <find>div#numautocomplete-selecte</find>
+      <find>#sub</find>
+      <find>autocomplete-selected</find>
+      <find>font</find>
+      <find>font-siz</find>
+      <find>selectedt</find>
+      <find>bynum</find>
+      <find>closeall</find>
+      <find>closeAllLists(</find>
+      <find>closeAllLists2</find>
+      <find>autocomplete(</find>
+      <find>disappear</find>
+      <find>react.crea</find>
+      <find>tags</find>
+      <find>tilecontrol</find>
+      <find>disappea</find>
+      <find>disappe</find>
+      <find>disappear2</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -164,8 +131,8 @@
         <option value="$PROJECT_DIR$/annotateimage.js" />
         <option value="$PROJECT_DIR$/SnDserver2.js" />
         <option value="$PROJECT_DIR$/public/testWHS2.html" />
-        <option value="$PROJECT_DIR$/public/testWHS2.js" />
         <option value="$PROJECT_DIR$/public/testWHS2.css" />
+        <option value="$PROJECT_DIR$/public/testWHS2.js" />
       </list>
     </option>
   </component>
@@ -284,12 +251,12 @@
       <workItem from="1527886762079" duration="6445000" />
       <workItem from="1527966933922" duration="14949000" />
       <workItem from="1528058460854" duration="5336000" />
-      <workItem from="1528065641787" duration="27711000" />
+      <workItem from="1528065641787" duration="31699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90595000" />
+    <option name="totallyTimeSpent" value="94583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -336,7 +303,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>472</line>
+          <line>482</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -346,13 +313,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>37</line>
+          <line>47</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/public/testWHS2.js</url>
-          <line>171</line>
+          <line>181</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
@@ -381,7 +348,7 @@
           <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="80" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -745,39 +712,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SnDserver2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="-1499">
           <caret line="58" column="149" selection-start-line="58" selection-start-column="149" selection-end-line="58" selection-end-column="149" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/testWHS2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="81" column="73" selection-start-line="81" selection-start-column="73" selection-end-line="81" selection-end-column="73" />
+        <state relative-caret-position="229">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/photoGallery.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="69">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/testWHS2.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+        <state relative-caret-position="192">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/testWHS2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
         </state>
       </provider>
     </entry>

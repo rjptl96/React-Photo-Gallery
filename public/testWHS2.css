@@ -10,6 +10,9 @@ body {
     flex-direction: column;
     color: blue;
 }
+div#numautocomplete-selected {
+    display: flex;
+}
 div#selected {
     display: flex;
 }
@@ -32,6 +35,8 @@ div#selected {
     color: white;
     word-break: break-all;
     margin-left: 10px;
+    font-size: medium;
+    font-weight: 100;
 }
 main {
     position: relative;
@@ -88,6 +93,8 @@ header {
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
+    max-height: fit-content;
+
 }
 
 #srch_bttn {
@@ -142,6 +149,10 @@ img {
     width: 100%;
 }
 
+form#theform {
+    width: 80%;
+}
+
 @media only screen and (max-width: 480px) {
     header {
         text-align: center;
@@ -186,11 +197,10 @@ img {
 
 
 .autocomplete {
-    /*the container must be positioned relative:*/
     position: relative;
     display: flex;
+    width: auto;
     flex-direction: column;
-
 }
 
 .autocomplete-items {

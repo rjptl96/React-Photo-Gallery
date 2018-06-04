@@ -32,6 +32,16 @@ function disappear(bird) {
     // not just give it 'display: "none"'.
 }
 
+function disappear2(bird) {
+    var birdDiv = document.getElementById(bird);
+    var par = birdDiv.parentElement;
+    birdDiv.parentElement.removeChild(birdDiv);
+
+    selectedtags = selectedtags.filter(a => a !== bird);
+
+    // Note: in Assn 3 you need to actually remove the tile from the DOM,
+    // not just give it 'display: "none"'.
+}
 
 function getautocomplete()
 {
@@ -328,7 +338,7 @@ ReactDOM.render(React.createElement(App),reactContainer);
 
 // Called when the user pushes the "submit" button 
 function photoByNumber() {
-
+    closeAllLists2();
     var w = window.innerWidth;
     if (w > 480) {
 
@@ -485,6 +495,23 @@ function reqListener () {
 }
 
 
+function closeAllLists2(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    inp = document.getElementById("num");
+    var x = document.getElementsByClassName("autocomplete-items");
+    var y = document.getElementsByClassName("autocomplete-selected");
+    for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+            x[i].parentNode.removeChild(x[i]);
+            y[i].parentNode.removeChild(y[i]);
+        }
+    }
+}
+
+
+
+
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
@@ -498,15 +525,21 @@ function autocomplete(inp, arr) {
         currentFocus = -1;
         /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
+        x = document.createElement("DIV");
+        x.setAttribute("id", this.id + "autocomplete-selected");
+        x.setAttribute("class", "autocomplete-selected");
         a.setAttribute("id", this.id + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
         /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(x);
         this.parentNode.appendChild(a);
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
             /*check if the item starts with the same letters as the text field value:*/
             if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
                 /*create a DIV element for each matching element:*/
+
+
                 b = document.createElement("DIV");
                 /*make the matching letters bold:*/
                 b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
@@ -516,11 +549,19 @@ function autocomplete(inp, arr) {
                 /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function(e) {
                     /*insert the value for the autocomplete text field:*/
-                    selectedtags.push(this.getElementsByTagName("input")[0].value)
+                    selectedtags.push(this.getElementsByTagName("input")[0].value);
+                    x = document.getElementById("numautocomplete-selected");
+                    var j = document.createElement("DIV");
+                    j.className = "selectedtags";
+                    j.id = this.getElementsByTagName("input")[0].value;
+                    j.innerHTML = this.getElementsByTagName("input")[0].value;
+                    addOnclick(j, disappear2, this.getElementsByTagName("input")[0].value);
+                    x.appendChild(j);
+
                     inp.value = "";
                     /*close the list of autocompleted values,
                     (or any other open lists of autocompleted values:*/
-                    closeAllLists();
+                    //closeAllLists();
                 });
                 a.appendChild(b);
             }
@@ -571,15 +612,19 @@ function autocomplete(inp, arr) {
         /*close all autocomplete lists in the document,
         except the one passed as an argument:*/
         var x = document.getElementsByClassName("autocomplete-items");
+        //var y = document.getElementsByClassName("autocomplete-selected");
         for (var i = 0; i < x.length; i++) {
             if (elmnt != x[i] && elmnt != inp) {
                 x[i].parentNode.removeChild(x[i]);
+                //y[i].parentNode.removeChild(y[i]);
             }
         }
     }
+
+
     /*execute a function when someone clicks in the document:*/
     document.addEventListener("click", function (e) {
-        closeAllLists(e.target);
+        //closeAllLists(e.target);
     });
 }
 

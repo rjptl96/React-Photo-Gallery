@@ -525,14 +525,20 @@ function autocomplete(inp, arr) {
         currentFocus = -1;
         /*create a DIV element that will contain the items (values):*/
         a = document.createElement("DIV");
-        x = document.createElement("DIV");
-        x.setAttribute("id", this.id + "autocomplete-selected");
-        x.setAttribute("class", "autocomplete-selected");
         a.setAttribute("id", this.id + "autocomplete-list");
         a.setAttribute("class", "autocomplete-items");
-        /*append the DIV element as a child of the autocomplete container:*/
-        this.parentNode.appendChild(x);
         this.parentNode.appendChild(a);
+        if (document.getElementById("numautocomplete-selected") == undefined)
+        {
+            x = document.createElement("DIV");
+            x.setAttribute("id", this.id + "autocomplete-selected");
+            x.setAttribute("class", "autocomplete-selected");
+            this.parentNode.appendChild(x);
+        }
+
+
+
+
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
             /*check if the item starts with the same letters as the text field value:*/

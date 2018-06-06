@@ -25,9 +25,21 @@ function disappear(bird) {
 
     for (var k = 1; k < par.children.length; k++)
     {
-        selectedtags.push(par.children[k].innerHTML)
+
+        selectedtags.push(par.children[k].innerHTML.replace("      x",""))
     }
-    photoByNumber();
+
+    if(selectedtags.length>0)
+    {
+        photoByNumber();
+    }
+    else
+    {
+        photoss = [];
+        ReactDOM.render(React.createElement(App),reactContainer);
+
+    }
+
     // Note: in Assn 3 you need to actually remove the tile from the DOM,
     // not just give it 'display: "none"'.
 }
@@ -199,7 +211,7 @@ class TileControl extends React.Component {
         for (var x = 0; x < _tags.length; x++) {
             //objects.push({key: _tags[x], text: _tags[x] });
             objects.push(React.createElement(Tag,
-                {key: _tags[x], text: _tags[x], onClick: this.selectTag }));
+                {key: _tags[x], text: _tags[x] + "      x", onClick: this.selectTag }));
         }
         return ( React.createElement('div',
                 {className: _selected ? 'selectedControls' : 'normalControls'},
@@ -387,7 +399,7 @@ function photoByNumber() {
                 var j = document.createElement("DIV");
                 j.className = "selectedtags";
                 j.id = numList[i];
-                j.innerHTML = numList[i];
+                j.innerHTML = numList[i] + "      x";
                 addOnclick(j, disappear, numList[i]);
                 document.getElementById("selected").appendChild(j);
 
@@ -430,7 +442,7 @@ function photoByNumber() {
                 var j = document.createElement("DIV");
                 j.className = "selectedtags";
                 j.id = selectedtags[i];
-                j.innerHTML = selectedtags[i];
+                j.innerHTML = selectedtags[i] + "      x";
                 addOnclick(j, disappear, selectedtags[i]);
                 document.getElementById("selected").appendChild(j);
 
@@ -560,7 +572,7 @@ function autocomplete(inp, arr) {
                     var j = document.createElement("DIV");
                     j.className = "selectedtags";
                     j.id = this.getElementsByTagName("input")[0].value;
-                    j.innerHTML = this.getElementsByTagName("input")[0].value;
+                    j.innerHTML = this.getElementsByTagName("input")[0].value + "      x";
                     addOnclick(j, disappear2, this.getElementsByTagName("input")[0].value);
                     x.appendChild(j);
 

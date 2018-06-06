@@ -175,7 +175,7 @@ class TileControl extends React.Component {
         console.log("in onclick!", obj);
         //let photos = this.state.photos;
         let array = this.state.thetagarray;
-        array = array.filter(a => a !== obj.index);
+        array = array.filter(a => a !== obj.index.replace("      x",""));
         var update = array.join(',');
         this.setState({ thetagarray: array });
         if (this.state.theimage != "")
